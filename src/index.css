@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 20% 97%;
+    --foreground: 150 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
+
+    --primary: 152 45% 28%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 30 35% 92%;
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 30 20% 94%;
+    --muted-foreground: 150 15% 45%;
+
+    --accent: 45 70% 55%;
+    --accent-foreground: 150 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 25% 88%;
+    --input: 30 25% 88%;
+    --ring: 152 45% 28%;
+
+    --radius: 0.75rem;
+
+    /* Montecchia Golf Colors */
+    --montecchia-green: 152 45% 28%;
+    --montecchia-green-light: 152 40% 40%;
+    --montecchia-green-dark: 152 50% 20%;
+    --montecchia-gold: 45 70% 55%;
+    --montecchia-cream: 30 35% 92%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 45% 28%) 0%, hsl(152 40% 35%) 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 70% 55%) 0%, hsl(45 75% 60%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(152 45% 28% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(152 45% 28% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 30 20% 95%;
+
+    --card: 150 25% 12%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 150 25% 12%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 152 40% 40%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 150 20% 18%;
+    --secondary-foreground: 30 20% 95%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 150 15% 65%;
+
+    --accent: 45 70% 55%;
+    --accent-foreground: 150 30% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 30 20% 95%;
+
+    --border: 150 20% 22%;
+    --input: 150 20% 22%;
+    --ring: 152 40% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
