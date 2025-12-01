@@ -109,7 +109,7 @@ const InviteFriend = () => {
                 Direttamente in Segreteria
               </h3>
               <p className="text-muted-foreground leading-relaxed text-center mb-6">
-                Porta il tuo amico direttamente al circolo e segnala in segreteria che è un tuo invitato.
+                Porta il tuo amico direttamente al circolo e <strong className="text-foreground">segnala in segreteria che è un tuo invitato.</strong>
               </p>
               <div className="mt-6 p-4 bg-accent/10 rounded-xl border border-accent/20">
                 <div className="flex items-center gap-2 justify-center mb-2">

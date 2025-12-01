@@ -4,18 +4,18 @@ import { useState } from "react"
 
 const openDays = [
   {
-    date: "15 Novembre 2025",
-    time: "10:00 - 13:00",
+    date: "31 Gennaio 2026",
+    time: "ore 14",
     location: "Golf della Montecchia"
   },
   {
-    date: "6 Dicembre 2025",
-    time: "14:00 - 17:00",
+    date: "Febbraio 2026",
+    time: "ore 14",
     location: "Golf della Montecchia"
   },
   {
-    date: "20 Gennaio 2026",
-    time: "10:00 - 13:00",
+    date: "Marzo 2026",
+    time: "ore 14",
     location: "Golf della Montecchia"
   }
 ]
