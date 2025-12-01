@@ -5,18 +5,21 @@ import { useState } from "react"
 const openDays = [
   {
     date: "31 Gennaio 2026",
-    time: "ore 14",
-    location: "Golf della Montecchia"
+    time: "ore 14.00 - 16.00",
+    location: "Golf della Montecchia",
+    pending: false
   },
   {
     date: "Febbraio 2026",
-    time: "ore 14",
-    location: "Golf della Montecchia"
+    time: "ore 14.00 - 16.00",
+    location: "Golf della Montecchia",
+    pending: true
   },
   {
     date: "Marzo 2026",
-    time: "ore 14",
-    location: "Golf della Montecchia"
+    time: "ore 14.00 - 16.00",
+    location: "Golf della Montecchia",
+    pending: true
   }
 ]
 
@@ -70,6 +73,11 @@ const OpenDays = () => {
                   <Calendar className="w-5 h-5" />
                   <span className="font-semibold text-lg">{event.date}</span>
                 </div>
+                {event.pending && (
+                  <div className="text-xs opacity-80 mb-2 italic">
+                    Data da definire
+                  </div>
+                )}
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm opacity-90">{event.time}</span>
