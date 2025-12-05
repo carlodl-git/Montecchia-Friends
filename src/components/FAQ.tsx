@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: "Come funziona esattamente il programma Montecchia & Friends?",
-    answer: "Ogni volta che inviti un amico che diventa socio del club, entrambi ricevete uno sconto del 10% sulla quota associativa. Lo sconto è cumulabile: se inviti 10 amici, raggiungi il 100% di sconto!"
+    answer: "Ogni volta che inviti un amico che diventa socio del club, ricevi uno sconto del 10% sulla quota associativa. Lo sconto è cumulabile: se inviti 10 amici, raggiungi il 100% di sconto!"
   },
   {
     question: "Chi può essere invitato?",

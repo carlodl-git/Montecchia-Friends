@@ -4,8 +4,8 @@ const benefits = [
   {
     icon: Percent,
     value: "10%",
-    title: "Sconto reciproco",
-    description: "Sia tu che il tuo amico ricevete il 10% di sconto sulla quota associativa"
+    title: "Sconto per te",
+    description: "Ricevi il 10% di sconto sulla quota associativa per ogni amico che inviti e diventa socio"
   },
   {
     icon: TrendingUp,

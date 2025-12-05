@@ -4,7 +4,7 @@ const steps = [
   {
     icon: Users,
     title: "Invita un amico",
-    description: "Porta un amico al circolo o invitalo ad un Open Day"
+    description: "Porta un amico con te al circolo, oppure invitalo ad un Open Day"
   },
   {
     icon: UserPlus,
@@ -13,8 +13,8 @@ const steps = [
   },
   {
     icon: Gift,
-    title: "Ricevete lo sconto",
-    description: "Entrambi ricevete il 10% di sconto, cumulabile fino al 100%"
+    title: "Ricevi lo sconto",
+    description: "Ricevi il 10% di sconto sulla quota associativa, cumulabile fino al 100%"
   }
 ]
 
