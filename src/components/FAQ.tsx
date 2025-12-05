@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "Chi può essere invitato?",
-    answer: "La promozione è valida solo per amici che non sono giocatori oppure che non sono stati associati ad altri circoli da almeno 3 anni."
+    answer: "La promozione è valida solo per amici che non sono giocatori oppure che non sono stati associati ad altri circoli da almeno 2 anni."
   },
   {
     question: "Come posso far partecipare un amico?",
@@ -25,6 +25,10 @@ const faqs = [
   {
     question: "Posso invitare più di un amico?",
     answer: "Assolutamente sì! Non c'è limite al numero di amici che puoi invitare. Ogni nuovo socio che arriva grazie a te ti farà accumulare un ulteriore 10% di sconto."
+  },
+  {
+    question: "L'amico invitato riceve qualche vantaggio?",
+    answer: "Sì! Il socio invitato gode già di una quota speciale come nuovo iscritto al circolo."
   }
 ]
 
