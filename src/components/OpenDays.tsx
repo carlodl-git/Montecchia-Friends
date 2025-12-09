@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, MapPin, Share2, Copy, Check, Mail } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 const openDays = [
   {
@@ -25,13 +25,25 @@ const openDays = [
 
 const OpenDays = () => {
   const [copied, setCopied] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const shareUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdkRVqQIVcclpQgst6cu9KwmwXi4FeuJdZxJ-9I5p6-2r0hZA/viewform?usp=header'
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl)
       setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      timeoutRef.current = setTimeout(() => setCopied(false), 2000)
     } catch (err) {
       console.error('Failed to copy: ', err)
     }
