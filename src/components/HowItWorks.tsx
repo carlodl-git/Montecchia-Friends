@@ -14,7 +14,7 @@ const steps = [
   {
     icon: Gift,
     title: "Ricevi lo sconto",
-    description: "Ricevi il 10% di sconto sulla quota associativa, cumulabile fino al 100%"
+    description: "Ricevi il 10% di sconto sulla tua quota, calcolato sulla quota del nuovo socio, cumulabile fino al 100%"
   }
 ]
 

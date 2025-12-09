@@ -32,7 +32,7 @@ const Hero = () => {
           Condividi la passione per il golf
         </p>
         <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
-          Invita un amico, giocate insieme e ricevi uno sconto esclusivo sulla quota associativa
+          Invita un amico, giocate insieme e ricevi uno sconto sulla tua quota, calcolato sulla quota del nuovo socio iscritto
         </p>
         <Button 
           onClick={scrollToHowItWorks}
