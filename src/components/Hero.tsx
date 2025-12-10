@@ -32,7 +32,7 @@ const Hero = () => {
           Condividi la passione per il golf
         </p>
         <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
-          Invita un amico a scoprire il Golf della Montecchia: entrambi riceverete vantaggi esclusivi!
+          Invita un amico a scoprire il Golf: entrambi riceverete vantaggi esclusivi!
         </p>
         <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-light opacity-90">
           Tu ottieni uno sconto sulla tua quota associativa, mentre il tuo amico beneficia di agevolazioni dedicate ai nuovi giocatori.
