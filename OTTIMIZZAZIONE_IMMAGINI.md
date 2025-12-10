@@ -88,3 +88,4 @@ Dopo l'ottimizzazione:
 - Per compatibilità con browser vecchi, puoi usare `<picture>` con fallback
 - Vite comprime automaticamente le immagini durante il build, ma l'ottimizzazione manuale è sempre meglio
 
+

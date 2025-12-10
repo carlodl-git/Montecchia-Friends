@@ -9,12 +9,12 @@ const steps = [
   {
     icon: UserPlus,
     title: "L'amico si iscrive",
-    description: "Il tuo amico diventa socio del club"
+    description: "Il tuo amico diventa nuovo socio del Club e riceve una promozione dedicata"
   },
   {
     icon: Gift,
-    title: "Ricevi lo sconto",
-    description: "Ricevi il 10% di sconto sulla tua quota, calcolato sulla quota del nuovo socio, cumulabile fino al 100%"
+    title: "Ottenete i Vantaggi",
+    description: "Ottieni uno sconto in percentuale sulla tua quota. Gli sconti sono cumulabili fino al 100% del totale della tua quota annuale."
   }
 ]
 
@@ -27,7 +27,7 @@ const HowItWorks = () => {
             Come funziona
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Tre semplici passi per condividere la tua passione e ottenere vantaggi esclusivi
+            Tre semplici passi per condividere la tua passione e ottenere vantaggi per entrambi
           </p>
         </div>
 

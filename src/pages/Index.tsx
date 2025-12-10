@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero"
 import HowItWorks from "@/components/HowItWorks"
 import Benefits from "@/components/Benefits"
+import InvitedBenefit from "@/components/InvitedBenefit"
+import InviteFriend from "@/components/InviteFriend"
 import OpenDays from "@/components/OpenDays"
 import FAQ from "@/components/FAQ"
-import InviteFriend from "@/components/InviteFriend"
 import { Footer } from "@/components/Footer"
 
 export function Index() {
@@ -12,6 +13,7 @@ export function Index() {
       <Hero />
       <HowItWorks />
       <Benefits />
+      <InvitedBenefit />
       <InviteFriend />
       <OpenDays />
       <FAQ />

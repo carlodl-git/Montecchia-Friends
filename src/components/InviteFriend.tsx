@@ -139,18 +139,9 @@ const InviteFriend = () => {
             <h4 className="font-semibold text-foreground text-lg mb-4 text-center">
               Requisiti di partecipazione
             </h4>
-            <p className="text-muted-foreground text-center leading-relaxed mb-6">
+            <p className="text-muted-foreground text-center leading-relaxed">
               La promozione è valida solo se l'amico invitato <strong className="text-foreground">non è un giocatore</strong> oppure <strong className="text-foreground">non è stato associato ad altri circoli da almeno 2 anni</strong>. La segnalazione dell'invito deve avvenire la prima volta che l'amico visita il circolo.
             </p>
-            <div className="mt-6 p-4 bg-primary/10 rounded-xl border border-primary/20">
-              <div className="flex items-center gap-2 justify-center mb-2">
-                <Gift className="w-5 h-5 text-primary" />
-                <span className="font-semibold text-foreground">Vantaggio per l'invitato</span>
-              </div>
-              <p className="text-sm text-muted-foreground text-center">
-                Il socio invitato gode già di una <strong className="text-foreground">quota speciale come nuovo iscritto</strong> al circolo.
-              </p>
-            </div>
           </div>
 
           <div className="bg-card p-8 rounded-2xl shadow-[var(--shadow-card)] border border-border/50 text-center">

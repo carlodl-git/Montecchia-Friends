@@ -5,19 +5,19 @@ const benefits = [
     icon: Percent,
     value: "10%",
     title: "Sconto per te",
-    description: "Ricevi il 10% di sconto sulla tua quota, calcolato sulla quota del nuovo socio che si iscrive grazie a te"
+    description: "Ricevi lo sconto sulla tua quota annuale per ogni nuovo socio invitato, calcolato su 10% della quota dei nuovi iscritti."
   },
   {
     icon: TrendingUp,
     value: "100%",
     title: "Cumulabile",
-    description: "Accumula fino al 100% di sconto invitando nuovi soci al club"
+    description: "Accumula sconti fino al 100% del valore della tua quota annuale."
   },
   {
     icon: Calendar,
     value: "12 mesi",
     title: "Durata",
-    description: "Lo sconto è valido per 12 mesi dalla data di iscrizione del nuovo socio"
+    description: "Lo sconto resta valido per 12 mesi dalla data di iscrizione del nuovo socio."
   }
 ]
 
@@ -30,7 +30,7 @@ const Benefits = () => {
             I vantaggi
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Un programma pensato per premiare chi condivide la passione per il golf
+            Un programma pensato per far crescere la comunità e premiare chi condivide la passione per il golf
           </p>
         </div>
 
