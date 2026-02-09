@@ -4,22 +4,40 @@ import { useState, useEffect, useRef } from "react"
 
 const openDays = [
   {
-    date: "31 Gennaio 2026",
-    time: "ore 14.00 - 16.00",
+    date: "22 Febbraio 2025",
+    time: "ore 12:00",
     location: "Golf della Montecchia",
     pending: false
   },
   {
-    date: "Febbraio 2026",
-    time: "ore 14.00 - 16.00",
+    date: "1 Marzo 2025",
+    time: "ore 12:00",
     location: "Golf della Montecchia",
-    pending: true
+    pending: false
   },
   {
-    date: "Marzo 2026",
-    time: "ore 14.00 - 16.00",
+    date: "8 Marzo 2025",
+    time: "ore 12:00",
     location: "Golf della Montecchia",
-    pending: true
+    pending: false
+  },
+  {
+    date: "15 Marzo 2025",
+    time: "ore 12:00",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "22 Marzo 2025",
+    time: "ore 12:00",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "29 Marzo 2025",
+    time: "ore 12:00",
+    location: "Golf della Montecchia",
+    pending: false
   }
 ]
 
@@ -73,13 +91,14 @@ const OpenDays = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {openDays.map((event, index) => (
-            <div 
-              key={index}
-              className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-2 animate-fade-in-up border border-border/50"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
+        <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-8 min-w-max max-w-6xl mx-auto">
+            {openDays.map((event, index) => (
+              <div 
+                key={index}
+                className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-2 animate-fade-in-up border border-border/50 flex-shrink-0 w-[calc(100vw-2rem)] sm:w-80 md:w-96"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
               <div className="bg-gradient-to-r from-primary to-primary/80 p-6 text-primary-foreground">
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="w-5 h-5" />
@@ -141,6 +160,7 @@ const OpenDays = () => {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
