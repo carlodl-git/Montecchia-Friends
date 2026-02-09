@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 export function OpenDayForm() {
   const navigate = useNavigate()
-  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdEXAMPLE/viewform?embedded=true"
+  const FORM_URL = "https://forms.gle/AKqMsPeTdacbvdY67"
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -57,7 +57,7 @@ export function OpenDayForm() {
                       variant="golf"
                       size="lg"
                       className="mt-4"
-                      onClick={() => window.open('https://forms.google.com', '_blank')}
+                      onClick={() => window.open('https://forms.gle/AKqMsPeTdacbvdY67', '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Apri Form di Iscrizione

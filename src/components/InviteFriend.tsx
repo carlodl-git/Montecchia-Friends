@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react"
 const InviteFriend = () => {
   const [copied, setCopied] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const shareUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdkRVqQIVcclpQgst6cu9KwmwXi4FeuJdZxJ-9I5p6-2r0hZA/viewform?usp=header'
+  const shareUrl = 'https://forms.gle/AKqMsPeTdacbvdY67'
 
   useEffect(() => {
     return () => {
