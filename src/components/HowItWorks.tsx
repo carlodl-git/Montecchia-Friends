@@ -1,10 +1,11 @@
 import { Users, UserPlus, Gift } from "lucide-react"
+import { useClub } from "@/ClubContext"
 
-const steps = [
+const getSteps = (openDays: boolean) => [
   {
     icon: Users,
     title: "Invita un amico",
-    description: "Porta un amico con te al circolo, oppure invitalo ad un Open Day"
+    description: openDays ? "Porta un amico con te al circolo, oppure invitalo ad un Open Day" : "Porta un amico con te al circolo e segnalalo in segreteria"
   },
   {
     icon: UserPlus,
@@ -19,6 +20,7 @@ const steps = [
 ]
 
 const HowItWorks = () => {
+  const steps = getSteps(useClub().openDays)
   return (
     <section id="come-funziona" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">

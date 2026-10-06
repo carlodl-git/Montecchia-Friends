@@ -4,19 +4,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { useClub } from "@/ClubContext"
+import { programName, type Club } from "@/clubs"
 
-const faqs = [
+const getFaqs = (club: Club) => [
   {
-    question: "Come funziona esattamente il programma Montecchia & Friends?",
+    question: `Come funziona esattamente il programma ${programName(club)}?`,
     answer: "Ogni volta che inviti un amico che diventa socio del club, ricevi uno sconto del 10% calcolato sulla quota del nuovo socio iscritto. Lo sconto è cumulabile: se inviti 10 amici, raggiungi il 100% di sconto!"
   },
   {
     question: "Chi può essere invitato?",
-    answer: "La promozione è valida solo per amici che non sono giocatori oppure che non sono stati associati ad altri circoli da almeno 2 anni."
+    answer: club.requirement
   },
   {
     question: "Come posso far partecipare un amico?",
-    answer: "Ci sono due modi: il tuo amico può iscriversi a un Open Day indicando il tuo nome nel modulo, oppure puoi portarlo direttamente in segreteria e segnalare che è un tuo invitato. In quest'ultimo caso, riceverà anche una sessione gratuita di campo pratica!"
+    answer: club.openDays ? "Ci sono due modi: il tuo amico può iscriversi a un Open Day indicando il tuo nome nel modulo, oppure puoi portarlo direttamente in segreteria e segnalare che è un tuo invitato. In quest'ultimo caso, riceverà anche una sessione gratuita di campo pratica!" : "Porta il tuo amico in segreteria, oppure contatta la segreteria, e segnala che è un tuo invitato: sarà la segreteria a registrare la segnalazione."
   },
   {
     question: "Quanto tempo ho per utilizzare lo sconto?",
@@ -33,6 +35,8 @@ const faqs = [
 ]
 
 const FAQ = () => {
+  const club = useClub()
+  const faqs = getFaqs(club)
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -42,7 +46,7 @@ const FAQ = () => {
               Domande frequenti
             </h2>
             <p className="text-muted-foreground text-lg">
-              Tutto quello che devi sapere sul programma Montecchia & Friends
+              Tutto quello che devi sapere sul programma {programName(club)}
             </p>
           </div>
 

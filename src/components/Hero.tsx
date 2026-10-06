@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
-import heroImage from "@/assets/hero-golf.jpeg"
-import montecchiaLogo from "@/assets/Logo_Golf_Montecchia.png"
+import { useClub } from "@/ClubContext"
+import { programName } from "@/clubs"
 
 const Hero = () => {
+  const club = useClub()
   const scrollToHowItWorks = () => {
     document.getElementById('come-funziona')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -12,7 +13,7 @@ const Hero = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${club.hero})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
       </div>
@@ -20,13 +21,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in">
         <div className="mb-8 -mt-20 md:-mt-24 flex justify-center">
           <img 
-            src={montecchiaLogo} 
-            alt="Golf della Montecchia" 
+            src={club.logo} 
+            alt={club.name} 
             className="h-32 md:h-44 w-auto opacity-90 drop-shadow-lg"
           />
         </div>
         <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Montecchia & Friends
+          {programName(club)}
         </h1>
         <p className="font-['Playfair_Display'] text-2xl md:text-3xl mb-4 font-light italic">
           Condividi la passione per il golf
