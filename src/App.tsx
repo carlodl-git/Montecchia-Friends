@@ -5,7 +5,7 @@ import { ChooseClub } from "@/pages/ChooseClub"
 import { CLUBS, type ClubSlug } from "@/clubs"
 
 // referral.golfmontecchia.it continua a mostrare direttamente Montecchia;
-// invita.playgolf54.it mostra la scelta del circolo.
+// invita.play54.it mostra la scelta del circolo.
 const isMontecchiaHost = () => window.location.hostname.endsWith("golfmontecchia.it")
 
 function Home() {

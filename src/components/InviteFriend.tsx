@@ -9,7 +9,7 @@ const InviteFriend = () => {
   const club = useClub()
   const [copied, setCopied] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const shareUrl = club.openDays ? 'https://forms.gle/AKqMsPeTdacbvdY67' : `https://invita.playgolf54.it/${club.slug}`
+  const shareUrl = club.openDays ? 'https://forms.gle/AKqMsPeTdacbvdY67' : `https://invita.play54.it/${club.slug}`
 
   useEffect(() => {
     return () => {
