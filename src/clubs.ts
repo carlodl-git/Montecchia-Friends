@@ -52,7 +52,7 @@ export const CLUBS: Record<ClubSlug, Club> = {
     instagram: { handle: "golfdellamontecchia", url: "https://www.instagram.com/golfdellamontecchia" },
     facebook: { label: "Golf della Montecchia", url: "https://www.facebook.com/GolfdellaMontecchia" },
     openDays: true,
-    openDayForm: "https://forms.gle/Bv9XuypW2pAHmueq8",
+    openDayForm: "https://forms.gle/pbNeC6GVchMG5SEUA",
     regolamento: "/Montecchia_Friends_Regolamento.docx",
     requirement:
       "La promozione è valida solo se l'amico invitato non è un giocatore oppure non è stato associato ad altri circoli da almeno 2 anni.",
