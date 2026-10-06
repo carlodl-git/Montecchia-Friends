@@ -4,6 +4,7 @@ import frassanelleLogo from "@/assets/logo_frassanelle_white.png"
 import galzignanoLogo from "@/assets/logo_galzignano_white.png"
 import albarellaLogo from "@/assets/logo_albarella.png"
 import montecchiaHero from "@/assets/hero-golf.jpeg"
+import montecchiaCard from "@/assets/card-montecchia.jpeg"
 import frassanelleHero from "@/assets/hero-frassanelle.jpeg"
 import galzignanoHero from "@/assets/hero-galzignano.jpeg"
 import albarellaHero from "@/assets/hero-albarella.jpeg"
@@ -20,6 +21,8 @@ export interface Club {
   /** Logo chiaro per fondi scuri (scelta del circolo) */
   logoLight?: string
   hero: string
+  /** Foto per il riquadro nella pagina di scelta, se diversa dalla hero */
+  card?: string
   address: string
   phone: string
   email: string
@@ -42,6 +45,7 @@ export const CLUBS: Record<ClubSlug, Club> = {
     logo: montecchiaLogo,
     logoLight: montecchiaLogoWhite,
     hero: montecchiaHero,
+    card: montecchiaCard,
     address: "Via Montecchia 12, Selvazzano Dentro (PD)",
     phone: "+39 0498055550",
     email: "info@golfmontecchia.it",

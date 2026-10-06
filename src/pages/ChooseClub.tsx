@@ -9,7 +9,7 @@ export function ChooseClub() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-golf-green text-white">
+    <div className="min-h-screen bg-[#193d37] text-white">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-14 animate-fade-in">
           <img src={pg54Logo} alt="PlayGolf54" className="h-20 md:h-24 w-auto mx-auto mb-8" />
@@ -31,7 +31,7 @@ export function ChooseClub() {
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${club.hero})` }}
+                  style={{ backgroundImage: `url(${club.card ?? club.hero})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/20" />
                 <div className="relative h-full flex flex-col items-center justify-center gap-4 p-6 text-center">
