@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in">
         <div className="mb-8 -mt-20 md:-mt-24 flex justify-center">
           <img 
-            src={club.logo} 
+            src={club.logoLight ?? club.logo} 
             alt={club.name} 
             className="h-32 md:h-44 w-auto opacity-90 drop-shadow-lg"
           />
