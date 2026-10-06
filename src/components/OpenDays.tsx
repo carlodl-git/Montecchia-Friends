@@ -5,6 +5,55 @@ import { useState, useEffect, useRef } from "react"
 
 const openDays = [
   {
+    date: "Domenica 29 Marzo 2026",
+    iso: "2026-03-29",
+    time: "",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "Domenica 12 Aprile 2026",
+    iso: "2026-04-12",
+    time: "",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "Domenica 26 Aprile 2026",
+    iso: "2026-04-26",
+    time: "",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "Domenica 10 Maggio 2026",
+    iso: "2026-05-10",
+    time: "",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "Domenica 24 Maggio 2026",
+    iso: "2026-05-24",
+    time: "",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "Domenica 21 Giugno 2026",
+    iso: "2026-06-21",
+    time: "",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
+    date: "Domenica 27 Settembre 2026",
+    iso: "2026-09-27",
+    time: "ore 11:00",
+    location: "Golf della Montecchia",
+    pending: false
+  },
+  {
     date: "22 Febbraio 2025",
     iso: "2025-02-22",
     time: "ore 12:00",
@@ -136,10 +185,12 @@ const OpenDays = () => {
                     Data da definire
                   </div>
                 )}
+                {event.time && (
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm opacity-90">{event.time}</span>
                 </div>
+                )}
               </div>
               
               <div className="p-6">
