@@ -18,7 +18,7 @@ const getFaqs = (club: Club) => [
   },
   {
     question: "Come posso far partecipare un amico?",
-    answer: club.openDays ? "Ci sono due modi: il tuo amico può iscriversi a un Open Day indicando il tuo nome nel modulo, oppure puoi portarlo direttamente in segreteria e segnalare che è un tuo invitato. In quest'ultimo caso, riceverà anche una sessione gratuita di campo pratica!" : "Porta il tuo amico in segreteria, oppure contatta la segreteria, e segnala che è un tuo invitato: sarà la segreteria a registrare la segnalazione."
+    answer: club.openDays ? "Ci sono due modi: il tuo amico può iscriversi a un Open Day scrivendo il tuo nome nel campo «Note» del modulo, oppure puoi portarlo direttamente in segreteria e segnalare che è un tuo invitato. In quest'ultimo caso, riceverà anche una sessione gratuita di campo pratica!" : "Porta il tuo amico in segreteria, oppure contatta la segreteria, e segnala che è un tuo invitato: sarà la segreteria a registrare la segnalazione."
   },
   {
     question: "Quanto tempo ho per utilizzare lo sconto?",

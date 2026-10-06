@@ -30,6 +30,7 @@ export interface Club {
   facebook: { label: string; url: string }
   /** Solo Montecchia organizza gli Open Day con modulo di iscrizione */
   openDays: boolean
+  openDayForm?: string
   /** Regolamento scaricabile, se disponibile */
   regolamento?: string
   /** Chi può essere invitato */
@@ -51,6 +52,7 @@ export const CLUBS: Record<ClubSlug, Club> = {
     instagram: { handle: "golfdellamontecchia", url: "https://www.instagram.com/golfdellamontecchia" },
     facebook: { label: "Golf della Montecchia", url: "https://www.facebook.com/GolfdellaMontecchia" },
     openDays: true,
+    openDayForm: "https://forms.gle/Bv9XuypW2pAHmueq8",
     regolamento: "/Montecchia_Friends_Regolamento.docx",
     requirement:
       "La promozione è valida solo se l'amico invitato non è un giocatore oppure non è stato associato ad altri circoli da almeno 2 anni.",
@@ -103,5 +105,20 @@ export const CLUBS: Record<ClubSlug, Club> = {
 }
 
 export const CLUB_ORDER: ClubSlug[] = ["montecchia", "frassanelle", "galzignano", "albarella"]
+
+/** Messaggio di invito all'Open Day da condividere (WhatsApp / email) */
+export const openDayInvite = (club: Club, when?: { date: string; time: string }) => {
+  const url = club.openDayForm ?? ""
+  const quando = when ? `\n\n📅 Data: ${when.date}\n🕐 Orario: ${when.time}` : ""
+  return {
+    whatsapp:
+      `Ciao! Ti invito a un Open Day al ${club.name}: una lezione introduttiva gratuita con i maestri del circolo per scoprire il golf 🏌️‍♂️` +
+      `${when ? ` (${when.date}, ${when.time})` : ""}\n\nIscriviti qui: ${url}\n\nNel campo «Note» del modulo scrivi il mio nome, così risulti mio invitato!`,
+    subject: `Ti invito a un Open Day al ${club.name}${when ? ` - ${when.date}` : ""}`,
+    body:
+      `Ciao!\n\nTi invito a un Open Day al ${club.name}: una lezione introduttiva gratuita, con i maestri del circolo, per scoprire il golf in un ambiente accogliente.${quando}\n\n` +
+      `Iscriviti qui: ${url}\n\nQuando compili il modulo, scrivi il mio nome nel campo «Note»: così risulti mio invitato e potrai avere le agevolazioni per i nuovi soci.\n\nTi aspetto al circolo! 🏌️‍♂️`,
+  }
+}
 
 export const programName = (club: Club) => `${club.short} & Friends`

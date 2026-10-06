@@ -2,14 +2,20 @@ import { Button } from "@/components/ui/button"
 import { UserPlus, Building2, Gift, Share2, Copy, Check, FileText, Mail } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import { useClub } from "@/ClubContext"
-import { programName } from "@/clubs"
+import { programName, openDayInvite } from "@/clubs"
 // import golfCourseImage from "@/assets/golf-course.jpg" // Decommentare quando disponibile
 
 const InviteFriend = () => {
   const club = useClub()
   const [copied, setCopied] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const shareUrl = club.openDays ? 'https://forms.gle/AKqMsPeTdacbvdY67' : `https://invita.play54.it/${club.slug}`
+  // Il messaggio va all'amico: mai il link a invita.play54.it (pagina per i soci).
+  const segreteriaInvite = {
+    text: `Ciao! Ti invito a scoprire il golf al ${club.name}: per i nuovi soci ci sono agevolazioni dedicate 🏌️‍♂️\n\nContatta la segreteria al ${club.phone} o scrivi a ${club.email} e di' che ti ho invitato io.`,
+    subject: `Ti invito al ${club.name}`,
+    body: `Ciao!\n\nTi invito a scoprire il golf al ${club.name}: per i nuovi soci ci sono agevolazioni dedicate.\n\nContatta la segreteria al ${club.phone} o scrivi a ${club.email} e di' che ti ho invitato io, indicando il mio nome.\n\nSpero di vederti al circolo! 🏌️‍♂️`,
+  }
+  const shareUrl = club.openDayForm ?? segreteriaInvite.text
 
   useEffect(() => {
     return () => {
@@ -34,16 +40,17 @@ const InviteFriend = () => {
 
   const shareViaWhatsApp = () => {
     const text = encodeURIComponent(club.openDays
-      ? "Iscriviti all'Open Day del Golf della Montecchia! 🏌️‍♂️"
-      : `Ti invito a scoprire il golf al ${club.name}: per i nuovi soci ci sono agevolazioni dedicate! 🏌️‍♂️`)
-    window.open(`https://wa.me/?text=${text}%20${encodeURIComponent(shareUrl)}`, '_blank')
+      ? openDayInvite(club).whatsapp
+      : segreteriaInvite.text)
+    window.open(`https://wa.me/?text=${text}`, '_blank')
   }
 
   const shareViaEmail = () => {
-    const subject = encodeURIComponent(club.openDays ? "Invito all'Open Day del Golf della Montecchia" : `Invito al ${club.name}`)
+    const invite = openDayInvite(club)
+    const subject = encodeURIComponent(club.openDays ? invite.subject : segreteriaInvite.subject)
     const body = encodeURIComponent(club.openDays
-      ? `Ciao!\n\nTi invito a partecipare all'Open Day del Golf della Montecchia!\n\nIscriviti qui: ${shareUrl}\n\nSpero di vederti lì! 🏌️‍♂️`
-      : `Ciao!\n\nTi invito a scoprire il golf al ${club.name}: per i nuovi soci ci sono agevolazioni dedicate.\n\nTutte le informazioni qui: ${shareUrl}\n\nSpero di vederti al circolo! 🏌️‍♂️`)
+      ? invite.body
+      : segreteriaInvite.body)
     window.open(`mailto:?subject=${subject}&body=${body}`, '_blank')
   }
 
@@ -81,7 +88,7 @@ const InviteFriend = () => {
                 Tramite Open Day
               </h3>
               <p className="text-muted-foreground leading-relaxed text-center mb-6">
-                Il tuo amico si iscrive a un Open Day e indica il tuo nome nel modulo di iscrizione come socio invitante.
+                Il tuo amico si iscrive a un Open Day e scrive il tuo nome nel campo «Note» del modulo di iscrizione.
               </p>
               <div className="space-y-3">
                 <Button 
@@ -148,7 +155,7 @@ const InviteFriend = () => {
                     Condividi via Email
                   </Button>
                   <Button onClick={copyToClipboard} variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    {copied ? (<><Check className="w-4 h-4 mr-2" />Link copiato!</>) : (<><Copy className="w-4 h-4 mr-2" />Copia link</>)}
+                    {copied ? (<><Check className="w-4 h-4 mr-2" />Messaggio copiato!</>) : (<><Copy className="w-4 h-4 mr-2" />Copia messaggio</>)}
                   </Button>
                 </div>
               )}

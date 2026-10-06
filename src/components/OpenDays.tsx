@@ -1,3 +1,4 @@
+import { CLUBS, openDayInvite } from "@/clubs"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, MapPin, Share2, Copy, Check, Mail } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
@@ -44,7 +45,7 @@ const openDays = [
 const OpenDays = () => {
   const [copied, setCopied] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const shareUrl = 'https://forms.gle/AKqMsPeTdacbvdY67'
+  const shareUrl = CLUBS.montecchia.openDayForm ?? ''
 
   useEffect(() => {
     return () => {
@@ -68,13 +69,14 @@ const OpenDays = () => {
   }
 
   const shareViaWhatsApp = () => {
-    const text = encodeURIComponent("Iscriviti all'Open Day del Golf della Montecchia! 🏌️‍♂️")
-    window.open(`https://wa.me/?text=${text}%20${encodeURIComponent(shareUrl)}`, '_blank')
+    const text = encodeURIComponent(openDayInvite(CLUBS.montecchia).whatsapp)
+    window.open(`https://wa.me/?text=${text}`, '_blank')
   }
 
   const shareViaEmail = (eventDate: string, eventTime: string) => {
-    const subject = encodeURIComponent(`Open Day Golf della Montecchia - ${eventDate}`)
-    const body = encodeURIComponent(`Ciao!\n\nTi invito a partecipare all'Open Day del Golf della Montecchia:\n\n📅 Data: ${eventDate}\n🕐 Orario: ${eventTime}\n\nIscriviti qui: ${shareUrl}\n\nSpero di vederti lì! 🏌️‍♂️`)
+    const invite = openDayInvite(CLUBS.montecchia, { date: eventDate, time: eventTime })
+    const subject = encodeURIComponent(invite.subject)
+    const body = encodeURIComponent(invite.body)
     window.open(`mailto:?subject=${subject}&body=${body}`, '_blank')
   }
 
