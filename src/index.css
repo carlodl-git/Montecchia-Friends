@@ -109,3 +109,13 @@ All colors MUST be HSL.
     display: none;  /* Chrome, Safari and Opera */
   }
 }
+
+/* Aree di tocco più comode su telefono per link di contatto e footer */
+@media (max-width: 768px) {
+  footer a,
+  .tap a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

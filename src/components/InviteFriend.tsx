@@ -142,7 +142,7 @@ const InviteFriend = () => {
               </p>
               {!club.openDays && (
                 <div className="space-y-3">
-                  <div className="text-center text-foreground space-y-1 mb-2">
+                  <div className="tap text-center text-foreground space-y-1 mb-2 flex flex-col items-center">
                     <a className="block font-semibold hover:text-primary" href={`tel:${club.phone.replace(/\s/g, "")}`}>{club.phone}</a>
                     <a className="block font-semibold hover:text-primary" href={`mailto:${club.email}`}>{club.email}</a>
                   </div>
@@ -154,7 +154,7 @@ const InviteFriend = () => {
                     <Mail className="w-5 h-5 mr-2" />
                     Condividi via Email
                   </Button>
-                  <Button onClick={copyToClipboard} variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                  <Button onClick={copyToClipboard} variant="outline" className="w-full h-11 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                     {copied ? (<><Check className="w-4 h-4 mr-2" />Messaggio copiato!</>) : (<><Copy className="w-4 h-4 mr-2" />Copia messaggio</>)}
                   </Button>
                 </div>
